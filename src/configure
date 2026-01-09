@@ -5,6 +5,9 @@ echo
 echo '$ cd ..'
 echo '$ ./configure'
 echo
+echo 'For Apple Silicon (M1/M2/M3/M4) Macs, the configure script will'
+echo 'automatically detect ARM64 architecture and use optimized build settings.'
+echo
 echo 'Good luck!'
 echo
 

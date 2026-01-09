@@ -1,5 +1,83 @@
-ChangeLog of SoftEther VPN
---------------------------
+## ChangeLog of SoftEther VPN
+
+## Apple Silicon (ARM64) Support - January 2026
+
+### Added
+
+- **Native Apple Silicon Support**: SoftEther VPN now builds natively on Apple Silicon Macs (M1, M2, M3, M4 and future processors)
+- **All Core Components with ARM64 Support**:
+  - ✅ VPN Server (native ARM64)
+  - ✅ VPN Client (native ARM64)
+  - ✅ VPN Bridge (native ARM64)
+  - ✅ vpncmd Command-Line Admin Utility (native ARM64)
+- **Comprehensive Documentation**:
+  - `BUILD_MACOS_ARM64.md` - Detailed build instructions for Apple Silicon
+  - `COMPONENTS_ARM64_SUPPORT.md` - Complete component compatibility matrix and usage guide
+  - `QUICKSTART_APPLE_SILICON.md` - Quick start guide for fast setup
+  - `APPLE_SILICON_SUMMARY.md` - Technical implementation details
+- **Automated Setup Script**: New `setup_apple_silicon.sh` script for one-command installation
+- **Architecture Detection**: Enhanced configure script to automatically detect and optimize for ARM64
+- **Homebrew Integration**: Automatic detection of Homebrew library paths for both Apple Silicon and Intel Macs
+
+### Changed
+
+- **Configure Script**: Improved ARM64/aarch64 detection with visual feedback
+- **Makefile Optimization**: Updated `macos_64bit_nobits.mak` with:
+  - Native ARM64 compiler flags (`-arch arm64`)
+  - Dynamic Homebrew path detection
+  - Automatic OpenSSL and readline library path resolution
+  - Support for `/opt/homebrew` (Apple Silicon) and `/usr/local` (Intel)
+- **README**: Updated to mention Apple Silicon support and build instructions
+
+### Technical Details
+
+- ARM64 binaries are compiled with `-arch arm64` flag for native execution
+- No Rosetta 2 translation required - true native ARM64 execution
+- Optimized for performance and power efficiency on Apple Silicon
+- Full compatibility with macOS 11.0 (Big Sur) and later
+
+### Files Modified
+
+- `configure`: Enhanced ARM64 detection and user feedback
+- `src/configure`: Updated with Apple Silicon information
+- `src/makefiles/macos_64bit_nobits.mak`: Complete rewrite for ARM64 optimization
+- `README`: Added Apple Silicon references
+
+### Files Created
+
+- `BUILD_MACOS_ARM64.md`: Comprehensive build guide (NEW)
+- `COMPONENTS_ARM64_SUPPORT.md`: Component compatibility matrix and detailed usage (NEW)
+- `QUICKSTART_APPLE_SILICON.md`: Fast setup guide (NEW)
+- `APPLE_SILICON_SUMMARY.md`: Technical implementation summary (NEW)
+- `setup_apple_silicon.sh`: Automated installation script (NEW)
+
+### Benefits for Apple Silicon Users
+
+- ✅ Native ARM64 execution (no emulation overhead)
+- ✅ Better performance compared to Rosetta 2
+- ✅ Lower power consumption
+- ✅ Improved thermal characteristics
+- ✅ Full hardware acceleration support
+- ✅ Easy setup with automated script
+
+### Usage
+
+For Apple Silicon Mac users:
+
+```bash
+./setup_apple_silicon.sh
+```
+
+Or manually:
+
+```bash
+./configure
+make
+```
+
+For more details, see BUILD_MACOS_ARM64.md
+
+---
 
 The ChangeLog of SoftEther VPN is on our web site:
 https://www.softether.org/5-download/history
@@ -7,4 +85,3 @@ https://www.softether.org/5-download/history
 (In Japanese: https://ja.softether.org/5-download/history)
 
 Enjoy it!
-

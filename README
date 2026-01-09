@@ -1,6 +1,7 @@
 SoftEther VPN (Stable Edition Repository)
+
 - An Open-Source Cross-platform Multi-protocol VPN Program
-https://www.softether.org/
+  https://www.softether.org/
 
 We use GitHub as the primary official SoftEther VPN repository:
 https://github.com/SoftEtherVPN/SoftEtherVPN_Stable/
@@ -37,15 +38,17 @@ world's most powerful and easy-to-use multi-protocol VPN software.
 
 SoftEther VPN runs on Windows, Linux, Mac, FreeBSD and Solaris.
 
+SoftEther VPN now includes native support for Apple Silicon Macs (M1/M2/M3/M4).
+For ARM64-specific build instructions, see BUILD_MACOS_ARM64.md.
+For complete ARM64 documentation index, see README_ARM64_DOCS.md.
+
 SoftEther VPN supports most of widely-used VPN protocols
 including SSL-VPN, OpenVPN, IPsec, L2TP, MS-SSTP, L2TPv3 and EtherIP
 by the single SoftEther VPN Server program.
 
 More details on https://www.softether.org/.
 
-
-SOFTETHER VPN ADVANTAGES
-------------------------
+## SOFTETHER VPN ADVANTAGES
 
 - Supporting all popular VPN protocols by the single VPN server:
   SSL-VPN (HTTPS)
@@ -83,32 +86,31 @@ SOFTETHER VPN ADVANTAGES
   releasing the build.
 - More details at https://www.softether.org/.
 
-
-GETTING STARTED
----------------
+## GETTING STARTED
 
 Visit the SoftEther VPN Project official web site at first:
-        https://www.softether.org/
+https://www.softether.org/
 
 If you are not a developer, it is recommended to download the binary
 installers from:
-        https://www.softether-download.com/
+https://www.softether-download.com/
 
-To build from the source,
-see "BUILD_UNIX.TXT" or "BUILD_WINDOWS.TXT" files.
+To build from the source:
 
+- For Unix/Linux/FreeBSD/Solaris: see BUILD_UNIX.TXT
+- For Windows: see BUILD_WINDOWS.TXT
+- For Apple Silicon Macs (M1/M2/M3/M4): see BUILD_MACOS_ARM64.md
+  or run the automated setup script: ./setup_apple_silicon.sh
+  For component support details: see COMPONENTS_ARM64_SUPPORT.md
 
-HOW TO DOWNLOAD THE LATEST SOURCE CODE PACKAGE
-----------------------------------------------
+## HOW TO DOWNLOAD THE LATEST SOURCE CODE PACKAGE
 
 Go to https://www.softether-download.com/ and you can find the latest
 source-code package file in both .ZIP and .TAR.GZ format.
 
 This is the easiest way to obtain the source code of SoftEther VPN.
 
-
-HOW TO GET THE LATEST SOURCE CODE TREE FOR DEVELOPERS
------------------------------------------------------
+## HOW TO GET THE LATEST SOURCE CODE TREE FOR DEVELOPERS
 
 If you are an open-source developer, visit our GitHub repository:
 https://github.com/SoftEtherVPN/SoftEtherVPN_Stable/
@@ -124,9 +126,7 @@ $ ./configure
 $ make
 $ make install
 
-
-TO CIRCUMVENT YOUR GOVERNMENT'S FIREWALL RESTRICTION
-----------------------------------------------------
+## TO CIRCUMVENT YOUR GOVERNMENT'S FIREWALL RESTRICTION
 
 Because SoftEther VPN is overly strong tool to build a VPN tunnel,
 some censorship governments want to block your access to the source code
@@ -136,26 +136,22 @@ To circumvent your censor's unjust restriction,
 SoftEther VPN Project distributes the up-to-date source-code
 on all the following open-source repositories:
 
-  - GitHub
-    https://github.com/SoftEtherVPN/SoftEtherVPN_Stable/
+- GitHub
+  https://github.com/SoftEtherVPN/SoftEtherVPN_Stable/
 
 To fetch the source code from GitHub:
 $ git clone https://github.com/SoftEtherVPN/SoftEtherVPN_Stable.git
 
 We hope that you can reach one of the above URLs at least!
 
-
-SOURCE CODE CONTRIBUTION
-------------------------
+## SOURCE CODE CONTRIBUTION
 
 Your contribution to SoftEther VPN Project is much appreciated.
 Please send patches to us through GitHub.
 Read the SoftEther VPN Patch Acceptance Policy in advance:
 https://www.softether.org/5-download/src/9.patch
 
-
-DEAR SECURITY EXPERTS
----------------------
+## DEAR SECURITY EXPERTS
 
 If you find a bug or a security vulnerability please kindly inform us
 about the problem immediately so that we can fix the security problem
@@ -168,9 +164,7 @@ Please note that the above e-mail address is not a technical support
 inquiry address. If you need technical assistance, please visit
 https://www.softether.org/ and ask your question on the users forum.
 
-
-DISCLAIMER
-----------
+## DISCLAIMER
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
 EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
@@ -217,5 +211,3 @@ JUST A STATEMENT FOR WARNING AND DISCLAIMER.
 READ AND UNDERSTAND THE 'WARNING.TXT' FILE BEFORE USING THIS SOFTWARE.
 SOME SOFTWARE PROGRAMS FROM THIRD PARTIES ARE INCLUDED ON THIS SOFTWARE
 WITH LICENSE CONDITIONS WHICH ARE DESCRIBED ON THE 'THIRD_PARTY.TXT' FILE.
-
-

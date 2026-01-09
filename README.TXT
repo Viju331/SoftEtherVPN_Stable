@@ -27,6 +27,9 @@ subsidized by METI (Ministry of Economy, Trade and Industry of Japan),
 administrated by IPA (Information Promotion Agency, Japan).
 https://www.ipa.go.jp/english/humandev/
 
+Apple Silicon Support: Native ARM64 builds available for macOS M1/M2/M3/M4.
+See docs/macos/ for documentation and scripts/macos/ for installation scripts.
+
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at:

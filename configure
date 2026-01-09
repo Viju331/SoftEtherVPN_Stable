@@ -114,6 +114,25 @@ i?86|x86pc|i86pc|armv4*|armv5*|armv6*|armv7*)
 	;;
 esac
 
+# Show detected configuration
+echo "Detected configuration:"
+echo "  OS: ${OS}"
+echo "  CPU: ${CPU}"
+echo "  Architecture: `uname -m`"
+if test "$NOBITS" != ""
+then
+	echo "  ARM/AArch64 detected - using optimized build flags"
+fi
+echo
+
 cp src/makefiles/${OS}_${CPU}${NOBITS}.mak Makefile
 
 echo "The Makefile is generated. Run 'make' to build SoftEther VPN."
+echo
+echo "For Apple Silicon (M1/M2/M3/M4) Macs:"
+echo "  - Make sure you have Xcode Command Line Tools installed"
+echo "  - Install required dependencies via Homebrew:"
+echo "    brew install openssl readline ncurses"
+echo "  - You may need to set these environment variables before running make:"
+echo "    export CFLAGS=\"-I/opt/homebrew/opt/openssl/include -I/opt/homebrew/opt/readline/include\""
+echo "    export LDFLAGS=\"-L/opt/homebrew/opt/openssl/lib -L/opt/homebrew/opt/readline/lib\""

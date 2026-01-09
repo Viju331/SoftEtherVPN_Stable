@@ -56,19 +56,29 @@
 # SOME SOFTWARE PROGRAMS FROM THIRD PARTIES ARE INCLUDED ON THIS SOFTWARE WITH
 # LICENSE CONDITIONS WHICH ARE DESCRIBED ON THE 'THIRD_PARTY.TXT' FILE.
 # 
-# Platform: os=Mac OS X, bits=64bit
+# Platform: os=Mac OS X, bits=64bit (ARM64/Apple Silicon Optimized)
+# This makefile is optimized for Apple Silicon (M1/M2/M3/M4) processors
 
 # Variables
 
 #CC=gcc
 
-OPTIONS_COMPILE_DEBUG=-D_DEBUG -DDEBUG -DUNIX -DUNIX_MACOS -DBRIDGE_PCAP -DCPU_64 -D_REENTRANT -DREENTRANT -D_THREAD_SAFE -D_THREADSAFE -DTHREAD_SAFE -DTHREADSAFE -D_FILE_OFFSET_BITS=64 -I./src/ -I./src/Cedar/ -I./src/Mayaqua/ -g -fsigned-char
+# Detect Homebrew installation path (Apple Silicon uses /opt/homebrew, Intel uses /usr/local)
+HOMEBREW_PREFIX := $(shell brew --prefix 2>/dev/null || echo "/opt/homebrew")
+OPENSSL_PREFIX := $(shell brew --prefix openssl 2>/dev/null || echo "$(HOMEBREW_PREFIX)/opt/openssl")
+READLINE_PREFIX := $(shell brew --prefix readline 2>/dev/null || echo "$(HOMEBREW_PREFIX)/opt/readline")
 
-OPTIONS_LINK_DEBUG=-g -fsigned-char -lm -lpthread -lssl -lcrypto -liconv -lreadline -lncurses -lz -lpcap
+# Include paths for Homebrew libraries (important for Apple Silicon)
+HOMEBREW_INCLUDE=-I$(OPENSSL_PREFIX)/include -I$(READLINE_PREFIX)/include -I$(HOMEBREW_PREFIX)/include
+HOMEBREW_LIB=-L$(OPENSSL_PREFIX)/lib -L$(READLINE_PREFIX)/lib -L$(HOMEBREW_PREFIX)/lib
 
-OPTIONS_COMPILE_RELEASE=-DNDEBUG -DVPN_SPEED -DUNIX -DUNIX_MACOS -DBRIDGE_PCAP -DCPU_64 -D_REENTRANT -DREENTRANT -D_THREAD_SAFE -D_THREADSAFE -DTHREAD_SAFE -DTHREADSAFE -D_FILE_OFFSET_BITS=64 -I./src/ -I./src/Cedar/ -I./src/Mayaqua/ -O2 -fsigned-char
+OPTIONS_COMPILE_DEBUG=-D_DEBUG -DDEBUG -DUNIX -DUNIX_MACOS -DBRIDGE_PCAP -DCPU_64 -D_REENTRANT -DREENTRANT -D_THREAD_SAFE -D_THREADSAFE -DTHREAD_SAFE -DTHREADSAFE -D_FILE_OFFSET_BITS=64 -I./src/ -I./src/Cedar/ -I./src/Mayaqua/ $(HOMEBREW_INCLUDE) -g -fsigned-char -arch arm64
 
-OPTIONS_LINK_RELEASE=-O2 -fsigned-char -lm -lpthread -lssl -lcrypto -liconv -lreadline -lncurses -lz -lpcap
+OPTIONS_LINK_DEBUG=-g -fsigned-char -arch arm64 $(HOMEBREW_LIB) -lm -lpthread -lssl -lcrypto -liconv -lreadline -lncurses -lz -lpcap
+
+OPTIONS_COMPILE_RELEASE=-DNDEBUG -DVPN_SPEED -DUNIX -DUNIX_MACOS -DBRIDGE_PCAP -DCPU_64 -D_REENTRANT -DREENTRANT -D_THREAD_SAFE -D_THREADSAFE -DTHREAD_SAFE -DTHREADSAFE -D_FILE_OFFSET_BITS=64 -I./src/ -I./src/Cedar/ -I./src/Mayaqua/ $(HOMEBREW_INCLUDE) -O2 -fsigned-char -arch arm64
+
+OPTIONS_LINK_RELEASE=-O2 -fsigned-char -arch arm64 $(HOMEBREW_LIB) -lm -lpthread -lssl -lcrypto -liconv -lreadline -lncurses -lz -lpcap
 
 INSTALL_BINDIR=/usr/bin/
 INSTALL_VPNSERVER_DIR=/usr/vpnserver/
