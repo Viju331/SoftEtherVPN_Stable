@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>VPN.ico</file>
+        <file>Server.ico</file>
+        <file>Server_Offline.ico</file>
+    </qresource>
+</RCC>
