@@ -1,0 +1,5 @@
+/Users/rhealsoftware/Projects/Softether_stable/SoftEtherVPN_Stable/qt-gui/build/CMakeFiles/SoftEtherVPNQtManager.dir
+/Users/rhealsoftware/Projects/Softether_stable/SoftEtherVPN_Stable/qt-gui/build/CMakeFiles/edit_cache.dir
+/Users/rhealsoftware/Projects/Softether_stable/SoftEtherVPN_Stable/qt-gui/build/CMakeFiles/rebuild_cache.dir
+/Users/rhealsoftware/Projects/Softether_stable/SoftEtherVPN_Stable/qt-gui/build/CMakeFiles/SoftEtherVPNQtManager_autogen_timestamp_deps.dir
+/Users/rhealsoftware/Projects/Softether_stable/SoftEtherVPN_Stable/qt-gui/build/CMakeFiles/SoftEtherVPNQtManager_autogen.dir

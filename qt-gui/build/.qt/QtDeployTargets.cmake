@@ -1,0 +1,2 @@
+set(__QT_DEPLOY_TARGET_SoftEtherVPNQtManager_FILE /Users/rhealsoftware/Projects/Softether_stable/SoftEtherVPN_Stable/qt-gui/build/SoftEtherVPNQtManager)
+set(__QT_DEPLOY_TARGET_SoftEtherVPNQtManager_TYPE EXECUTABLE)
