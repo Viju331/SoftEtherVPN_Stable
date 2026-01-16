@@ -1,0 +1,4 @@
+{
+    "dotnet.preferCSharpExtension": true,
+    "cmake.sourceDirectory": "D:/SoftEther-VPN/SoftEtherVPN_Stable/qt-gui"
+}
