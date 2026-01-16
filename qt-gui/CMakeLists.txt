@@ -9,11 +9,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(Qt6 COMPONENTS Widgets REQUIRED)
 
-    src/main.cpp
-    src/MainWindow.cpp
-    src/MainWindow.h
-    resources/resources.qrc
-)
+ 
 add_executable(SoftEtherVPNQtManager
     src/main.cpp
     src/MainWindow.cpp
